@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -36,7 +37,12 @@ class HomeController extends Controller
 
     public function root()
     {
-        return view('index');
+        // $countries = Country::get()->pluck(fn ($country) => "{$country->name} - {$country->code}", 'id');
+        $countries = Country::get()->mapWithKeys(function($q){
+            return [$q->id => "{$q->name} - {$q->code}"];
+        });
+        // dd($countries);
+        return view('index', ['countries' => $countries]);
     }
 
     /*Language Translation*/
