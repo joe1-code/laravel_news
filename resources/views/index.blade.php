@@ -8,11 +8,11 @@
 @endsection
 @section('content')
 <div class="row">
-    <select name="country_id" class="form-control">
+    {{-- <select name="country_id" class="form-control">
         @foreach($countries as $id => $displayName)
         <option value="{{ $id }}">{{ $displayName }}</option>
         @endforeach
-    </select>
+    </select> --}}
 </div>
 @endsection
 @section('script')

@@ -1,8 +1,8 @@
-@extends('layouts.master-without-nav')
-@section('title')
-@lang('translation.signin')
-@endsection
-@section('content')
+
+<?php $__env->startSection('title'); ?>
+<?php echo app('translator')->get('translation.signin'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
 
 <!-- auth-page wrapper -->
 <div class="auth-page-wrapper py-5 d-flex justify-content-center align-items-center min-vh-100 zoomFade">
@@ -26,22 +26,22 @@
                                                 data-bs-slide-to="1" aria-label="Slide 2"></button>
                                             <button type="button" data-bs-target="#qoutescarouselIndicators"
                                                 data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                            {{-- <button type="button" data-bs-target="#qoutescarouselIndicators" --}}
-                                                {{-- data-bs-slide-to="3" aria-label="Slide 4"></button>--}}
+                                            
+                                                
                                         </div>
 
                                         <div class="carousel-inner text-center text-white-50 pb-5">
                                             <div class="carousel-item active">
                                                 <img class="d-block w-100 img-fluid"
-                                                    src="{{ URL::asset('images/fams_1.jpeg') }}" alt="Slide 1">
+                                                    src="<?php echo e(URL::asset('images/fams_1.jpeg')); ?>" alt="Slide 1">
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 img-fluid"
-                                                    src="{{ URL::asset('images/fams_2.jpeg') }}" alt="Slide 2">
+                                                    src="<?php echo e(URL::asset('images/fams_2.jpeg')); ?>" alt="Slide 2">
                                             </div>
                                             <div class="carousel-item">
                                                 <img class="d-block w-100 img-fluid"
-                                                    src="{{ URL::asset('images/fams_3.jpeg') }}" alt="Slide 3">
+                                                    src="<?php echo e(URL::asset('images/fams_3.jpeg')); ?>" alt="Slide 3">
                                             </div>
 
                                         </div>
@@ -54,7 +54,7 @@
                             <!-- end col -->
 
                             <div class="col-lg-6"
-                                style=" background-image: url('{{ URL::asset('build/images/bg.png') }}');background-size: cover;background-position: center;background-repeat: no-repeat;">
+                                style=" background-image: url('<?php echo e(URL::asset('build/images/bg.png')); ?>');background-size: cover;background-position: center;background-repeat: no-repeat;">
                                 <div class="p-lg-5 p-4">
                                     <div>
                                         <h5 style="
@@ -77,7 +77,7 @@
                                         <p class="text-muted text-center">Family Management System</p>
                                     </div>
                                     <div class="img-circle mx-auto">
-                                        <img src="{{ URL::asset('images/fams-logo.jpg') }}" alt="Image description"
+                                        <img src="<?php echo e(URL::asset('images/fams-logo.jpg')); ?>" alt="Image description"
                                             style="
                         width: 100%;
                         height: 100%;
@@ -88,8 +88,8 @@
                                     </div>
 
                                     <div class="mt-4 auth-box ">
-                                        <form action="{{ route('login') }}" method="POST">
-                                            @csrf
+                                        <form action="<?php echo e(route('login')); ?>" method="POST">
+                                            <?php echo csrf_field(); ?>
                                             <div class="mb-3">
                                                 <label for="username" class="form-label">Username <span
                                                         class="text-danger">*</span></label>
@@ -97,11 +97,18 @@
                                                     class="form-control"
                                                      id="email" name="email"
                                                     placeholder="Enter username">
-                                                @error('email')
+                                                <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
+                                                    <strong><?php echo e($message); ?></strong>
                                                 </span>
-                                                @enderror
+                                                <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                             </div>
 
                                             <div class="mb-3">
@@ -110,18 +117,32 @@
                                                         class="text-danger">*</span></label>
                                                 <div class="position-relative auth-pass-inputgroup mb-3">
                                                     <input type="password"
-                                                        class="form-control pe-5 password-input @error('password') is-invalid @enderror"
+                                                        class="form-control pe-5 password-input <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"
                                                         name="password" placeholder="Enter password"
                                                         id="password-input">
                                                     <button
                                                         class="btn btn-link position-absolute end-0 top-0 text-decoration-none text-muted password-addon"
                                                         type="button" id="password-addon"><i
                                                             class="ri-eye-fill align-middle"></i></button>
-                                                    @error('password')
+                                                    <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
                                                     <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $message }}</strong>
+                                                        <strong><?php echo e($message); ?></strong>
                                                     </span>
-                                                    @enderror
+                                                    <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
                                                 </div>
                                             </div>
 
@@ -173,7 +194,8 @@
     <!-- end Footer -->
 </div>
 <!-- end auth-page-wrapper -->
-@endsection
-@section('script')
-<script src="{{ URL::asset('build/js/pages/password-addon.init.js') }}"></script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('script'); ?>
+<script src="<?php echo e(URL::asset('build/js/pages/password-addon.init.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master-without-nav', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\v1.0.0\fams\resources\views/auth/login.blade.php ENDPATH**/ ?>

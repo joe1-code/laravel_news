@@ -37,12 +37,13 @@ class HomeController extends Controller
 
     public function root()
     {
+        // dd(45);
         // $countries = Country::get()->pluck(fn ($country) => "{$country->name} - {$country->code}", 'id');
-        $countries = Country::get()->mapWithKeys(function($q){
-            return [$q->id => "{$q->name} - {$q->code}"];
-        });
+        // $countries = Country::get()->mapWithKeys(function($q){
+        //     return [$q->id => "{$q->name} - {$q->code}"];
+        // });
         // dd($countries);
-        return view('index', ['countries' => $countries]);
+        return view('index');
     }
 
     /*Language Translation*/
@@ -132,4 +133,5 @@ class HomeController extends Controller
             }
         }
     }
+
 }

@@ -1,0 +1,16 @@
+.img-circle {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(to right, #8dc63f, #255196);
+            padding: 4px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .img-circle img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }

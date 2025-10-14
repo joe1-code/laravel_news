@@ -33,7 +33,7 @@
             </div>
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span>@lang('translation.menu')</span></li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarDashboards">
                         <i data-feather="home" class="icon-dual"></i> <span>@lang('translation.dashboards')</span>
@@ -45,7 +45,22 @@
                             </li>
                         </ul>
                     </div>
-                </li> <!-- end Dashboard Menu -->
+                </li>  --}}
+                <!-- end Dashboard Menu -->
+                <li class="nav-item">
+                    
+                    <a class="nav-link menu-link" href="dashboard-analytics" role="button"
+                        aria-expanded="false" aria-controls="sidebarDashboards">
+                        <i data-feather="home" class="icon-dual"></i> <span>@lang('translation.dashboards')</span>
+                    </a>
+                    {{-- <div class="collapse menu-dropdown" id="sidebarDashboards">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="dashboard-analytics" class="nav-link">@lang('translation.analytics')</a>
+                            </li>
+                        </ul>
+                    </div> --}}
+                </li> 
          
             </ul>
         </div>
