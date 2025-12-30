@@ -43,6 +43,14 @@
                     </a>
                     
                 </li> 
+                <li class="nav-item">
+                    
+                    <a class="nav-link menu-link" href="dashboard-analytics" role="button"
+                        aria-expanded="false" aria-controls="sidebarDashboards">
+                        <i data-feather="home" class="icon-dual"></i> <span><?php echo app('translator')->get('translation.dashboards'); ?></span>
+                    </a>
+                    
+                </li> 
          
             </ul>
         </div>
