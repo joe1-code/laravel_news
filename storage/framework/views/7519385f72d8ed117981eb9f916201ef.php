@@ -185,7 +185,7 @@ unset($__errorArgs, $__bag); ?>
                         <b style="color: #305fa7">Copyright &copy;<script>
                                 document.write(new Date().getFullYear())
                             </script> <a target="_blank" href="#" style="color: #5cb85c">Family Management Information
-                                System</a> | All Rights Reserved | FAMS v2.0.0</b>
+                                System</a> | All Rights Reserved | FAMS v1.0.0</b>
                     </div>
                 </div>
             </div>

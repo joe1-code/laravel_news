@@ -41,13 +41,19 @@
                         aria-expanded="false" aria-controls="sidebarDashboards">
                         <i data-feather="home" class="icon-dual"></i> <span><?php echo app('translator')->get('translation.dashboards'); ?></span>
                     </a>
-                    
+                    <div class="collapse menu-dropdown" id="sidebarDashboards">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="dashboard-analytics" class="nav-link"><?php echo app('translator')->get('translation.analytics'); ?></a>
+                            </li>
+                        </ul>
+                    </div>
                 </li> 
                 <li class="nav-item">
                     
-                    <a class="nav-link menu-link" href="dashboard-analytics" role="button"
+                    <a class="nav-link menu-link" href="<?php echo e(route('membership.index')); ?>" role="button"
                         aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i data-feather="home" class="icon-dual"></i> <span><?php echo app('translator')->get('translation.dashboards'); ?></span>
+                        <i class="ri-shake-hands-line"></i> <span><?php echo app('translator')->get('translation.membership.membership'); ?></span>
                     </a>
                     
                 </li> 

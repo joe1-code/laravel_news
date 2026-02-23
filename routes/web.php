@@ -26,6 +26,8 @@ Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'root'])->
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('updatePassword');
+
+include 'group/membership.php';
 });
 Route::get('{path}', [App\Http\Controllers\HomeController::class, 'index'])->where('path', '.*');
 

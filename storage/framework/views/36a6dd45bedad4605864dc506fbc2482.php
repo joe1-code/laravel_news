@@ -5,11 +5,6 @@
 <link href="<?php echo e(URL::asset('build/libs/jsvectormap/jsvectormap.min.css')); ?>" rel="stylesheet" type="text/css" />
 <link href="<?php echo e(URL::asset('build/libs/swiper/swiper-bundle.min.css')); ?>" rel="stylesheet" type="text/css" />
 <?php $__env->stopSection(); ?>
-<?php $__env->startSection('content'); ?>
-<div class="row">
-    
-</div>
-<?php $__env->stopSection(); ?>
 <?php $__env->startSection('script'); ?>
 <!-- apexcharts -->
 <script src="<?php echo e(URL::asset('build/libs/apexcharts/apexcharts.min.js')); ?>"></script>
